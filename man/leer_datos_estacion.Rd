@@ -35,11 +35,9 @@ en línea de referencia. Luego, lee los datos utilizando \code{readr::read_csv()
 devuelve un data frame con las observaciones meteorológicas.
 }
 \examples{
-\dontrun{
 # Descargar y leer los datos de la estación NH0472
 datos <- leer_datos_estacion("NH0472", "datos/NH0472.csv")
 
 # Leer el archivo si ya está descargado
 datos_local <- leer_datos_estacion("NH0472", "datos/NH0472.csv")
-}
 }

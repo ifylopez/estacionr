@@ -39,15 +39,15 @@ líneas donde cada estación se representa con un color distinto.
 El gráfico es generado mediante \code{ggplot2} y devuelve un objeto de clase \code{ggplot}.
 }
 \examples{
-\dontrun{
-# Crear gráfico mensual de una estación
-grafico_temperatura_mensual(datos_NH0472)
+# Cargar dataset de ejemplo y graficar
+data(NH0472)
+grafico_temperatura_mensual(NH0472)
 
-# Crear gráfico con colores personalizados
+# Cargar otro dataset y personalizar color y título
+data(NH0046)
 grafico_temperatura_mensual(
-  df = datos_combinados,
-  colores = c("NH0472" = "steelblue", "NH0910" = "darkred"),
+  df = NH0046,
+  colores = "darkred",
   titulo = "Evolución mensual de temperatura"
 )
-}
 }
