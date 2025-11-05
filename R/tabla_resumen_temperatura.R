@@ -22,16 +22,18 @@
 #'
 #' Cada fila representa el resumen estadístico de una estación meteorológica.
 #'
-#' @export
 #'
 #' @examples
-#' \dontrun{
 #' # Calcular resumen de una sola estación
-#' resumen_NH0472 <- tabla_resumen_temperatura(datos_NH0472)
+#' data(NH0472)
+#' resumen_NH0472 <- tabla_resumen_temperatura(NH0472)
 #'
 #' # Calcular resumen combinado para varias estaciones
-#' resumen_multiple <- tabla_resumen_temperatura(datos_NH0472, datos_NH0910, datos_NH0046)
-#' }
+#' data(NH0472)
+#' data(NH0910)
+#' data(NH0046)
+#' resumen_multiple <- tabla_resumen_temperatura(NH0472, NH0910, NH0046)
+#' @export
 tabla_resumen_temperatura <- function(...) {
   args <- list(...)
 
@@ -39,6 +41,7 @@ tabla_resumen_temperatura <- function(...) {
   if (!all(vapply(args, is.data.frame, logical(1)))) {
     cli::cli_abort("Todos los argumentos deben ser data frames. Verifica los objetos pasados a la función.")
   }
+
 
   resumenes <- data.frame()
 

@@ -26,20 +26,20 @@
 #' En el eje X se representan los meses del año y en el eje Y la temperatura
 #' promedio correspondiente. Cada línea corresponde a una estación distinta.
 #'
-#' @export
 #'
 #' @examples
-#' \dontrun{
-#' # Crear gráfico mensual de una estación
-#' grafico_temperatura_mensual(datos_NH0472)
+#' # Cargar dataset de ejemplo y graficar
+#' data(NH0472)
+#' grafico_temperatura_mensual(NH0472)
 #'
-#' # Crear gráfico con colores personalizados
+#' # Cargar otro dataset y personalizar color y título
+#' data(NH0046)
 #' grafico_temperatura_mensual(
-#'   df = datos_combinados,
-#'   colores = c("NH0472" = "steelblue", "NH0910" = "darkred"),
+#'   df = NH0046,
+#'   colores = "darkred",
 #'   titulo = "Evolución mensual de temperatura"
 #' )
-#' }
+#' @export
 grafico_temperatura_mensual <- function(df, colores = NULL, titulo = "Temperatura") {
 
   # promedio mensual (asumimos fecha es Date/POSIXct y columnas existen)

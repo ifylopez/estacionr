@@ -23,16 +23,14 @@
 #'
 #' Cada fila representa una observación diaria.
 #'
-#' @export
 #'
 #' @examples
-#' \dontrun{
 #' # Descargar y leer los datos de la estación NH0472
 #' datos <- leer_datos_estacion("NH0472", "datos/NH0472.csv")
 #'
 #' # Leer el archivo si ya está descargado
 #' datos_local <- leer_datos_estacion("NH0472", "datos/NH0472.csv")
-#' }
+#' @export
 
 
 leer_datos_estacion <- function(id_estacion, ruta_archivo) {
