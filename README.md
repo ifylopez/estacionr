@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# estacionR
+# estacionR <img src="man/figures/logo_estacionr.png" align="right" width="130"/>
 
 <!-- badges: start -->
 
