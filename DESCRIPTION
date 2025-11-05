@@ -1,9 +1,12 @@
 Package: estacionr
-Title: What the Package Does (One Line, Title Case)
+Title: Lectura y Análisis de Datos de Estaciones Meteorológicas
 Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: c(person("Mateo", "López", email = "mateandreslopez@gmail.com", role = c("aut", "cre")),
+    person("Benicio", "Lozano", email = "lozanobeniciou@gmail.com", role = "aut"))
+Description: Conjunto de herramientas para leer, limpiar y analizar datos
+    provenientes de estaciones meteorológicas. Permite importar registros
+    desde distintas estaciones, visualizar variables como temperatura,
+    humedad y precipitaciones, y comparar mediciones entre estaciones.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
@@ -11,3 +14,9 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
 URL: https://github.com/ifylopez/estacionr
 BugReports: https://github.com/ifylopez/estacionr/issues
+Depends: R (>= 3.5)
+LazyData: true
+Suggests:
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
