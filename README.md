@@ -1,36 +1,24 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# estacionr
+# estacionR
 
 <!-- badges: start -->
 
 <!-- badges: end -->
 
-**estacionr** es un paquete en desarrollo orientado al análisis de datos
+**estacionR** es un paquete en desarrollo orientado al análisis de datos
 meteorológicos provenientes de estaciones del sistema *SIGA–INTA
 (Argentina)*.
 
-El paquete ofrece un conjunto de funciones para:
-
-- *Importar* y *leer* registros de estaciones meteorológicas.  
-- *Resumir* y *visualizar* variables climáticas clave como temperatura,
-  humedad o precipitaciones.  
-- *Comparar* datos entre estaciones y facilitar análisis exploratorios.
-
-Está diseñado con fines *académicos y de aprendizaje*, y no reemplaza
-los sistemas oficiales de adquisición ni validación de datos.
-
-estacionr es un paquete de prueba desarrollado en el marco de la materia
-Programación II de la Licenciatura en Ciencia de Datos.
-
 Su propósito es explorar el proceso de creación y desarrollo
-colaborativo de paquetes en R.
+colaborativo de paquetes en R y está diseñado con fines *académicos y de
+aprendizaje*.
 
 ## Instalación
 
-Podés instalar la ersión de prueba de estacionR desde
-[GitHub](https://github.com/) with:
+Podés instalar la versión de prueba de estacionR desde
+[GitHub](https://github.com/) con:
 
 ``` r
 # install.packages("pak")
@@ -49,19 +37,19 @@ library(estacionr)
 
 El paquete incluye varios datasets listos para usar:
 
-| Nombre              | Descripción                                         |
-|---------------------|-----------------------------------------------------|
-| NH0046              | Registros diarios de la estación NH0046             |
-| NH0098              | Registros diarios de la estación NH0098             |
-| NH0437              | Registros diarios de la estación NH0437             |
-| NH0472              | Registros diarios de la estación NH0472             |
-| NH0910              | Registros diarios de la estación NH0910             |
+| Nombre | Descripción |
+|----|----|
+| NH0046 | Registros meteorológicos diarios de la estación NH0046 |
+| NH0098 | Registros meteorológicos diarios de la estación NH0098 |
+| NH0437 | Registros meteorológicos diarios de la estación NH0437 |
+| NH0472 | Registros meteorológicos diarios de la estación NH0472 |
+| NH0910 | Registros meteorológicos diarios de la estación NH0910 |
 | metadatos_completos | Tabla con información descriptiva de las estaciones |
 
 Ejemplo de uso rápido:
 
 ``` r
-data("NH0472")   # carga el dataset incluido
+data(NH0472)   # carga el dataset incluido
 head(NH0472)     # muestra las primeras filas
 ```
 
@@ -87,7 +75,8 @@ head(NH0472)     # muestra las primeras filas
 
 ## Uso de funciones:
 
-#### A continuación mostramos un ejemplo mínimo y completo del flujo de trabajo principal:
+A continuación mostramos un ejemplo mínimo y completo del flujo de
+trabajo principal:
 
 ``` r
 # 1. Leer datos (ejemplo local)
