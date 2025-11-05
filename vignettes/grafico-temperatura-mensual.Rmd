@@ -1,0 +1,59 @@
+---
+title: "Visualización mensual de temperatura promedio"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Visualización mensual de temperatura promedio}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(estacionr)
+```
+
+# Introducción
+
+En esta viñeta se muestra cómo usar la función `grafico_temperatura_mensual()` para visualizar la temperatura promedio mensual registrada por distintas estaciones meteorológicas.
+
+# Ejemplo de uso
+
+```{r}
+library(ggplot2)
+
+#Cargar algunos datos de ejemplo
+data(NH0472)
+data(NH0437)
+
+#Crear el gráfico de temperatura mensual
+grafico_temperatura_mensual(
+df = rbind(NH0472, NH0437),
+titulo = "Temperatura promedio mensual por estación"
+)
+```
+
+# Qué hace la función
+
+La función calcula el **promedio mensual** de la columna `temperatura_abrigo_150cm` agrupando por estación e identifica los meses con etiquetas abreviadas.
+
+# Argumentos principales
+
+-   `df`: data frame con las columnas `fecha`, `id` y `temperatura_abrigo_150cm`.
+
+-   `colores`: vector opcional de colores personalizados.
+
+-   `titulo`: texto para el título del gráfico.
+
+# Salida
+
+Devuelve un gráfico de líneas (`ggplot2`) con la temperatura promedio mensual por estación.
+
+# Conclusión
+
+Ideal para comparar variaciones estacionales de temperatura entre estaciones de la red INTA SIGA.

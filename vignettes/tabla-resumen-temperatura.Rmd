@@ -1,0 +1,56 @@
+---
+title: "Resumen estadistico de temperatura por estación"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Resumen estadistico de temperatura por estación}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(estacionr)
+```
+
+# Introducción
+
+En esta viñeta se explica el uso de la función `tabla_resumen_temperatura()`, que permite generar un resumen estadístico de las temperaturas registradas por una o varias estaciones.
+
+# Ejemplo de uso
+
+```{r}
+data(NH0472)
+data(NH0910)
+
+#Generar tabla resumen combinando dos estaciones
+
+tabla_resumen_temperatura(NH0472, NH0910)
+```
+
+# Qué calcula la función
+
+Para cada estación, se obtiene:
+
+-   `media`: temperatura media
+
+-   `mínimo`: valor más bajo registrad
+
+-   `máximo`: valor más alto registrado
+
+-   `desviación`: desviación estándar
+
+-   `n_observaciones`: cantidad de registros no faltantes
+
+# Uso típico
+
+Ideal para comparar rápidamente las características térmicas entre distintas estaciones.
+
+# Conclusión
+
+Esta función resume de manera clara y ordenada los valores de temperatura, siendo útil en análisis exploratorios o reportes meteorológicos.

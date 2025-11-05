@@ -1,0 +1,66 @@
+---
+title: "Cómo leer datos de una estación meteorológica"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Cómo leer datos de una estación meteorológica}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(estacionr)
+```
+
+# Introducción
+
+En esta viñeta aprenderás a utilizar la función `leer_datos_estacion()` del paquete "estacionr" para descargar y leer datos de estaciones meteorológicas.
+
+La función facilita la obtención de los registros sin tener que ingresar manualmente las URLs, y guarda los datos de forma local para usarlos posteriormente.
+
+# Uso básico
+
+```{r}
+#Leer metadatos
+metadatos <- leer_datos_estacion("metadatos", "datos/metadatos_completos.csv")
+
+#Leer datos de una estación específica
+NH0472 <- leer_datos_estacion("NH0472", "datos/NH0472.csv")
+```
+
+# Parámetros de la función
+
+-   `id_estacion`: identificador de la estación a leer (por ejemplo `"NH0472"` o `"metadatos"`).
+
+-   `ruta_archivo`: ruta local donde se guardará el CSV.
+
+# Resultados esperados
+
+La función devuelve un data frame con las columnas medidas por la estación, incluyendo por ejemplo:
+
+-   `fecha`
+
+-   `temperatura_abrigo_150cm`
+
+-   `precipitacion_pluviometrica`
+
+-   `radiacion_global`
+
+-   `granizo`
+
+-   `nieve`
+
+# Comportamiento inteligente
+
+Si el archivo ya fue descargado anteriormente, la función solo lo lee.\
+Si no existe, lo descarga automáticamente y lo guarda en la ruta especificada.
+
+# Conclusión
+
+Esta función es ideal para automatizar la lectura de datos meteorológicos, especialmente cuando se trabaja con múltiples estaciones.
