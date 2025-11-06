@@ -7,6 +7,9 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![R-CMD-check](https://github.com/ifylopez/estacionr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ifylopez/estacionr/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/ifylopez/estacionr/graph/badge.svg)](https://app.codecov.io/gh/ifylopez/estacionr)
 <!-- badges: end -->
 
 **estacionR** es un paquete en desarrollo orientado al análisis de datos
@@ -103,13 +106,13 @@ mensual</figcaption>
 
 Nos encanta recibir aportes y sugerencias!  
 Podés encontrar toda la información sobre cómo hacerlo en [Guía para
-contribuyentes (CONTRIBUTING.md)](CONTRIBUTING.md)
+contribuyentes](.github/CONTRIBUTING.md)
 
 ## Código de Conducta
 
 Queremos que `estacionr` sea un espacio respetuoso, inclusivo y
 colaborativo.  
-Por eso, todas las interacciones dentro del proyecto siguen nuestro  
+Por eso, todas las interacciones dentro del proyecto siguen nuestro
 [Código de Conducta](CODE_OF_CONDUCT.md).  
 Si contribuís o participás de cualquier forma, te pedimos que lo leas y
 lo respetes!
