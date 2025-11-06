@@ -1,34 +1,26 @@
 #' LEER DATOS DE UNA ESTACIÓN METEOROLÓGICA
 #'
-#' Descarga (si es necesario) y lee el archivo CSV de una estación meteorológica del conjunto de estaciones disponibles.
+#' Descarga (si es necesario) y lee el archivo CSV de una estacion meteorologica del conjunto de estaciones disponibles.
 #'
-#' @param id_estacion Cadena de texto que identifica la estación a leer.
-#' @param ruta_archivo Ruta local donde se almacenará o desde donde se leerá el archivo CSV.
+#' @param id_estacion Cadena de texto que identifica la estacion a leer.
+#' @param ruta_archivo Ruta local donde se almacenara o desde donde se leera el archivo CSV.
 #'
 #' @details
-#' La función verifica si el archivo correspondiente a la estación ya está
+#' La funcion verifica si el archivo correspondiente a la estacion ya esta
 #' descargado en el sistema local. Si no existe, lo descarga desde el repositorio
-#' en línea de referencia. Luego, lee los datos utilizando `readr::read_csv()` y
-#' devuelve un data frame con las observaciones meteorológicas.
+#' en linea de referencia. Luego, lee los datos y
+#' devuelve un data frame con las observaciones meteorologicas.
 #'
 #' @return
-#' Un objeto de clase `data.frame` (tibble) con los registros meteorológicos de
-#' la estación seleccionada.
-#' Las columnas pueden variar entre estaciones, pero típicamente incluyen:
-#' - `fecha`: fecha de la observación (tipo `Date`)
-#' - `temperatura_abrigo_150cm`: temperatura del aire en °C medida a 1,5 m
-#' - `humedad_media`: humedad media (%)
-#' - `nieve`: indica 1 si nevó y 0 si no
-#' - `granizo`: indica 1 si hubo granizo y 0 si no
-#'
-#' Cada fila representa una observación diaria.
+#' Un objeto de clase `data.frame` (tibble) con los registros meteorologicos de
+#' la estacion seleccionada. Cada fila representa una observacion diaria.
 #'
 #'
 #' @examples
-#' # Descargar y leer los datos de la estación NH0472
+#' # Descargar y leer los datos de la estacion NH0472
 #' datos <- leer_datos_estacion("NH0472", "datos/NH0472.csv")
 #'
-#' # Leer el archivo si ya está descargado
+#' # Leer el archivo si ya esta descargado
 #' datos_local <- leer_datos_estacion("NH0472", "datos/NH0472.csv")
 #' @export
 
@@ -45,7 +37,7 @@ leer_datos_estacion <- function(id_estacion, ruta_archivo) {
     "NH0437" = "https://raw.githubusercontent.com/rse-r/intro-programacion/main/datos/NH0437.csv"
   )
 
-  # Verificar ID válido
+  # Verificar ID valido
   if (!id_estacion %in% names(enlaces)) {
     cli::cli_abort("El ID de estación '{id_estacion}' no es válido. Usa alguno de los siguientes: metadatos, NH0472, NH0910, NH0046, NH0098, NH0437")
   }
@@ -61,7 +53,7 @@ leer_datos_estacion <- function(id_estacion, ruta_archivo) {
     utils::download.file(link_archivo, destfile = ruta_archivo)
   }
 
-  # Leer el archivo con readr
+  # Leer el archivo
   datos_estacion <- readr::read_csv(ruta_archivo, show_col_types = FALSE)
 
   cli::cli_inform("Lectura completada correctamente para la estación {id_estacion}.")
