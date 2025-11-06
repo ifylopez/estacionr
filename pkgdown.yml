@@ -1,0 +1,11 @@
+pandoc: 3.1.11
+pkgdown: 2.1.3
+pkgdown_sha: ~
+articles:
+  grafico-temperatura-mensual: grafico-temperatura-mensual.html
+  leer-datos-estacion: leer-datos-estacion.html
+  tabla-resumen-temperatura: tabla-resumen-temperatura.html
+last_built: 2025-11-06T17:05Z
+urls:
+  reference: https://ifylopez.github.io/estacionr/reference
+  article: https://ifylopez.github.io/estacionr/articles
