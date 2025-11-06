@@ -85,13 +85,11 @@ grafico_temperatura_mensual(df, titulo = "Temperatura promedio mensual")
 ![Gráfico de temperatura mensual](man/figures/grafico_visualtm.png)
 
 
-### Cómo contribuir al paquete:
-1. Hacé un fork y cloná el proyecto:
-Creá un fork de este repositorio en tu cuenta de GitHub y descargá una copia local en tu computadora para trabajar en tus modificaciones.
+## ¿Querés contribuir?
 
-2. Realizá tus cambios y enviá un pull request:
-Implementá las mejoras o correcciones que consideres necesarias en tu versión del proyecto.
-Luego, abrí un pull request hacia la rama principal del repositorio original, explicando claramente el objetivo y el alcance de tu contribución.
+Nos encanta recibir aportes y sugerencias!  
+Podés encontrar toda la información sobre cómo hacerlo en [Guía para contribuyentes (CONTRIBUTING.md)](CONTRIBUTING.md)
+
 
 ### Desarrollado por:
 
