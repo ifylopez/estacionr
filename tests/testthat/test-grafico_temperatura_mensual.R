@@ -10,7 +10,7 @@ test_that("grafico_temperatura_mensual genera un gráfico ggplot válido", {
     expect_true(inherits(grafico, "ggplot"))
   })
 
-test_that("grafico_temperatura_mensual respeta el título personalizado", {
+test_that("grafico_temperatura_mensual respeta el título y color personalizado", {
   df <- data.frame(
     id = rep("E2", 6),
     fecha = seq(as.Date("2024-01-01"), by = "30 days", length.out = 6),
@@ -21,6 +21,8 @@ test_that("grafico_temperatura_mensual respeta el título personalizado", {
 
   expect_true(inherits(grafico, "ggplot"))
   expect_equal(grafico$labels$title, "Gráfico de prueba")
+  col_scale <- grafico$scales$scales[[1]]$palette(1)
+  expect_equal(col_scale, "blue")
 })
 
 test_that("grafico_temperatura_mensual arroja error si faltan columnas requeridas", {
