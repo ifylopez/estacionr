@@ -21,8 +21,9 @@ test_that("grafico_temperatura_mensual respeta el título y color personalizado"
 
   expect_true(inherits(grafico, "ggplot"))
   expect_equal(grafico$labels$title, "Gráfico de prueba")
-  col_scale <- grafico$scales$scales[[1]]$palette(1)
-  expect_equal(col_scale, "blue")
+  sc <- grafico$scales$get_scales("colour")
+  col_hex <- sc$map("E2")
+  expect_equal(col_hex, "#0000FF")  # equivalente a "blue"
 })
 
 test_that("grafico_temperatura_mensual arroja error si faltan columnas requeridas", {
