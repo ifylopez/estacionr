@@ -46,7 +46,7 @@ Usamos:
 
 Este proyecto está pensado para aprender, compartir y colaborar.  
 Esperamos que todas las interacciones se den en un ambiente respetuoso y constructivo.  
-Por eso, **estacionr** sigue un [Código de Conducta](https://github.com/ifylopez/estacionr/blob/main/CODE_OF_CONDUCT.md). 
+Por eso, **estacionr** sigue un [Código de Conducta](https://github.com/ifylopez/estacionr/blob/master/CODE_OF_CONDUCT.md). 
 Al contribuir, aceptás sus términos.
 
 ---
