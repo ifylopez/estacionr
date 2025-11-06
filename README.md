@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# estacionR <img src="man/figures/logo_estacionr.png" align="right" width="130"/>
+# estacionR <img src="man/figures/logo.png" align="right" width="130"/>
 
 <!-- badges: start -->
 
@@ -99,17 +99,20 @@ alt="Gráfico de temperatura mensual" />
 mensual</figcaption>
 </figure>
 
-### Cómo contribuir al paquete:
+## ¿Querés contribuir?
 
-1.  Hacé un fork y cloná el proyecto: Creá un fork de este repositorio
-    en tu cuenta de GitHub y descargá una copia local en tu computadora
-    para trabajar en tus modificaciones.
+Nos encanta recibir aportes y sugerencias!  
+Podés encontrar toda la información sobre cómo hacerlo en [Guía para
+contribuyentes (CONTRIBUTING.md)](CONTRIBUTING.md)
 
-2.  Realizá tus cambios y enviá un pull request: Implementá las mejoras
-    o correcciones que consideres necesarias en tu versión del proyecto.
-    Luego, abrí un pull request hacia la rama principal del repositorio
-    original, explicando claramente el objetivo y el alcance de tu
-    contribución.
+## Código de Conducta
+
+Queremos que `estacionr` sea un espacio respetuoso, inclusivo y
+colaborativo.  
+Por eso, todas las interacciones dentro del proyecto siguen nuestro  
+[Código de Conducta](CODE_OF_CONDUCT.md).  
+Si contribuís o participás de cualquier forma, te pedimos que lo leas y
+lo respetes!
 
 ### Desarrollado por:
 
