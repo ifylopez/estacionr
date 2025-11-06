@@ -18,7 +18,8 @@ Depends: R (>= 3.5)
 Imports:
     ggplot2,
     dplyr,
-    lubridate
+    lubridate,
+    readr
 LazyData: true
 Suggests:
     knitr,
