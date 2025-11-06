@@ -91,6 +91,16 @@ Nos encanta recibir aportes y sugerencias!
 Podés encontrar toda la información sobre cómo hacerlo en [Guía para contribuyentes (CONTRIBUTING.md)](CONTRIBUTING.md)
 
 
+
+## Código de Conducta
+
+Queremos que `estacionr` sea un espacio respetuoso, inclusivo y colaborativo.  
+Por eso, todas las interacciones dentro del proyecto siguen nuestro  
+[Código de Conducta](CODE_OF_CONDUCT.md).  
+Si contribuís o participás de cualquier forma, te pedimos que lo leas y lo respetes!
+
+
+
 ### Desarrollado por:
 
 - [Mateo Lopez](https://github.com/ifylopez)
