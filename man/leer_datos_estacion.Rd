@@ -2,42 +2,32 @@
 % Please edit documentation in R/leer_datos_estacion.R
 \name{leer_datos_estacion}
 \alias{leer_datos_estacion}
-\title{LEER DATOS DE UNA ESTACIÓN METEOROLÓGICA}
+\title{LEER DATOS DE UNA ESTACION METEOROLOGICA}
 \usage{
 leer_datos_estacion(id_estacion, ruta_archivo)
 }
 \arguments{
-\item{id_estacion}{Cadena de texto que identifica la estación a leer.}
+\item{id_estacion}{Cadena de texto que identifica la estacion a leer.}
 
-\item{ruta_archivo}{Ruta local donde se almacenará o desde donde se leerá el archivo CSV.}
+\item{ruta_archivo}{Ruta local donde se almacenara o desde donde se leera el archivo CSV.}
 }
 \value{
-Un objeto de clase \code{data.frame} (tibble) con los registros meteorológicos de
-la estación seleccionada.
-Las columnas pueden variar entre estaciones, pero típicamente incluyen:
-\itemize{
-\item \code{fecha}: fecha de la observación (tipo \code{Date})
-\item \code{temperatura_abrigo_150cm}: temperatura del aire en °C medida a 1,5 m
-\item \code{humedad_media}: humedad media (\%)
-\item \code{nieve}: indica 1 si nevó y 0 si no
-\item \code{granizo}: indica 1 si hubo granizo y 0 si no
-}
-
-Cada fila representa una observación diaria.
+Un objeto de clase \code{data.frame} (tibble) con los registros meteorologicos de
+la estacion seleccionada. Cada fila representa una observacion diaria.
 }
 \description{
-Descarga (si es necesario) y lee el archivo CSV de una estación meteorológica del conjunto de estaciones disponibles.
+Descarga (si es necesario) y lee el archivo CSV de una estacion meteorologica del conjunto de estaciones disponibles.
 }
 \details{
-La función verifica si el archivo correspondiente a la estación ya está
+La funcion verifica si el archivo correspondiente a la estacion ya esta
 descargado en el sistema local. Si no existe, lo descarga desde el repositorio
-en línea de referencia. Luego, lee los datos utilizando \code{readr::read_csv()} y
-devuelve un data frame con las observaciones meteorológicas.
+en linea de referencia. Luego, lee los datos y
+devuelve un data frame con las observaciones meteorologicas.
 }
 \examples{
-# Descargar y leer los datos de la estación NH0472
+# Descargar y leer los datos de la estacion NH0472
 datos <- leer_datos_estacion("NH0472", "datos/NH0472.csv")
 
-# Leer el archivo si ya está descargado
+# Leer el archivo si ya esta descargado
 datos_local <- leer_datos_estacion("NH0472", "datos/NH0472.csv")
 }

@@ -3,16 +3,16 @@
 \docType{data}
 \name{NH0046}
 \alias{NH0046}
-\title{Registros meteorológicos — Estación NH0046}
+\title{Registros meteorologicos — Estación NH0046}
 \format{
 Un data frame con 17.041 filas y 35 columnas:
 \describe{
-\item{fecha}{Fecha de medición (Date)}
+\item{fecha}{Fecha de medicion (Date)}
 \item{temperatura_abrigo_150cm}{Temperatura del aire a 1.5 m (°C)}
-\item{precipitacion_pluviometrica}{Precipitación acumulada (mm)}
-\item{radiacion_global}{Radiación solar global (W/m²)}
-\item{granizo}{Presencia de granizo (1 = sí, 0 = no)}
-\item{nieve}{Presencia de nieve (1 = sí, 0 = no)}
+\item{precipitacion_pluviometrica}{Precipitacion acumulada (mm)}
+\item{radiacion_global}{Radiacion solar global (W/m²)}
+\item{granizo}{Presencia de granizo (1 = si, 0 = no)}
+\item{nieve}{Presencia de nieve (1 = si, 0 = no)}
 \item{...}{Otras columnas presentes en el CSV}
 }
 }
@@ -23,7 +23,7 @@ Un data frame con 17.041 filas y 35 columnas:
 NH0046
 }
 \description{
-Registros meteorológicos — Estación NH0046
+Registros meteorologicos — Estación NH0046
 }
 \examples{
 data(NH0046)

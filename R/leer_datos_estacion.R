@@ -1,4 +1,4 @@
-#' LEER DATOS DE UNA ESTACIÓN METEOROLÓGICA
+#' LEER DATOS DE UNA ESTACION METEOROLOGICA
 #'
 #' Descarga (si es necesario) y lee el archivo CSV de una estacion meteorologica del conjunto de estaciones disponibles.
 #'
@@ -39,16 +39,16 @@ leer_datos_estacion <- function(id_estacion, ruta_archivo) {
 
   # Verificar ID valido
   if (!id_estacion %in% names(enlaces)) {
-    cli::cli_abort("El ID de estación '{id_estacion}' no es válido. Usa alguno de los siguientes: metadatos, NH0472, NH0910, NH0046, NH0098, NH0437")
+    cli::cli_abort("El ID de estacion '{id_estacion}' no es valido. Usa alguno de los siguientes: metadatos, NH0472, NH0910, NH0046, NH0098, NH0437")
   }
 
   link_archivo <- enlaces[[id_estacion]]
 
-  # Leer o descargar según corresponda
+  # Leer o descargar segun corresponda
   if (file.exists(ruta_archivo)) {
-    cli::cli_inform("El archivo ya está descargado, se procede a leerlo...")
+    cli::cli_inform("El archivo ya esta descargado, se procede a leerlo...")
   } else {
-    cli::cli_inform("El archivo no está descargado, se procede a descargarlo...")
+    cli::cli_inform("El archivo no esta descargado, se procede a descargarlo...")
     dir.create(dirname(ruta_archivo), showWarnings = FALSE, recursive = TRUE)
     utils::download.file(link_archivo, destfile = ruta_archivo)
   }
@@ -56,7 +56,7 @@ leer_datos_estacion <- function(id_estacion, ruta_archivo) {
   # Leer el archivo
   datos_estacion <- readr::read_csv(ruta_archivo, show_col_types = FALSE)
 
-  cli::cli_inform("Lectura completada correctamente para la estación {id_estacion}.")
+  cli::cli_inform("Lectura completada correctamente para la estacion {id_estacion}.")
 
   return(datos_estacion)
 }

@@ -1,30 +1,30 @@
-#' GRÁFICO DE TEMPERATURA PROMEDIO MENSUAL
+#' GRAFICO DE TEMPERATURA PROMEDIO MENSUAL
 #'
-#' Genera un gráfico de líneas con la evolución mensual de la temperatura promedio
-#' para una o varias estaciones meteorológicas.
-#' Permite personalizar la paleta de colores y el título del gráfico.
+#' Genera un grafico de lineas con la evolucion mensual de la temperatura promedio
+#' para una o varias estaciones meteorologicas.
+#' Permite personalizar la paleta de colores y el titulo del grafico.
 #'
-#' @param df Data frame con los registros meteorológicos de una o más estaciones.
+#' @param df Data frame con los registros meteorologicos de una o mas estaciones.
 #'   Debe contener al menos las columnas:
 #'   - `id`
 #'   - `fecha`
 #'   - `temperatura_abrigo_150cm`
-#' @param colores Vector opcional de colores a utilizar en el gráfico.
+#' @param colores Vector opcional de colores a utilizar en el grafico.
 #'   Si no se especifica, se seleccionan colores aleatorios.
-#' @param titulo Cadena de texto con el título principal del gráfico.
+#' @param titulo Cadena de texto con el titulo principal del grafico.
 #'   Por defecto es `"Temperatura"`.
 #'
 #' @details
-#' La función calcula el promedio mensual de la variable `temperatura_abrigo_150cm`
-#' agrupando por estación (`id`) y mes (`fecha`). Luego construye un gráfico de
-#' líneas donde cada estación se representa con un color distinto.
-#' El gráfico es generado mediante `ggplot2` y devuelve un objeto de clase `ggplot`.
+#' La funcion calcula el promedio mensual de la variable `temperatura_abrigo_150cm`
+#' agrupando por estacion (`id`) y mes (`fecha`). Luego construye un grafico de
+#' lineas donde cada estacion se representa con un color distinto.
+#' El grafico es generado mediante `ggplot2` y devuelve un objeto de clase `ggplot`.
 #'
 #' @return
-#' Un objeto de clase `ggplot` que muestra la temperatura promedio mensual (°C)
-#' para cada estación meteorológica.
+#' Un objeto de clase `ggplot` que muestra la temperatura promedio mensual (C)
+#' para cada estacion meteorologica.
 #' En el eje X se representan los meses del año y en el eje Y la temperatura
-#' promedio correspondiente. Cada línea corresponde a una estación distinta.
+#' promedio correspondiente. Cada linea corresponde a una estacion distinta.
 #'
 #'
 #' @examples
@@ -32,17 +32,17 @@
 #' data(NH0472)
 #' grafico_temperatura_mensual(NH0472)
 #'
-#' # Cargar otro dataset y personalizar color y título
+#' # Cargar otro dataset y personalizar color y titulo
 #' data(NH0046)
 #' grafico_temperatura_mensual(
 #'   df = NH0046,
 #'   colores = "darkred",
-#'   titulo = "Evolución mensual de temperatura"
+#'   titulo = "Evolucion mensual de temperatura"
 #' )
 #' @export
 grafico_temperatura_mensual <- function(df, colores = NULL, titulo = "Temperatura") {
 
-  # promedio mensual (asumimos fecha es Date/POSIXct y columnas existen)
+  # promedio mensual
   df_mes <- df |>
     dplyr::mutate(mes = lubridate::month(fecha, label = TRUE, abbr = TRUE)) |>
     dplyr::group_by(id, mes) |>
@@ -65,15 +65,15 @@ grafico_temperatura_mensual <- function(df, colores = NULL, titulo = "Temperatur
     stats::setNames(colores[seq_len(n_ids)], estaciones)
   }
 
-  # gráfico
+  # grafico
   ggplot2::ggplot(df_mes, ggplot2::aes(x = mes, y = promedio, color = id, group = id)) +
     ggplot2::geom_line(linewidth = 1) +
     ggplot2::geom_point(size = 1.8) +
-    ggplot2::scale_color_manual(values = pal, name = "Estación") +
+    ggplot2::scale_color_manual(values = pal, name = "Estacion") +
     ggplot2::labs(
       title = titulo,
       x = "Mes",
-      y = "Temperatura promedio (°C)"
+      y = "Temperatura promedio (C)"
     ) +
     ggplot2::theme_minimal(base_size = 12) +
     ggplot2::theme(
@@ -81,3 +81,4 @@ grafico_temperatura_mensual <- function(df, colores = NULL, titulo = "Temperatur
       plot.title = ggplot2::element_text(face = "bold")
     )
 }
+

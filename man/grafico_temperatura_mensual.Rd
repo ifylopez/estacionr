@@ -2,12 +2,12 @@
 % Please edit documentation in R/grafico_temperatura_mensual.R
 \name{grafico_temperatura_mensual}
 \alias{grafico_temperatura_mensual}
-\title{GRÁFICO DE TEMPERATURA PROMEDIO MENSUAL}
+\title{GRAFICO DE TEMPERATURA PROMEDIO MENSUAL}
 \usage{
 grafico_temperatura_mensual(df, colores = NULL, titulo = "Temperatura")
 }
 \arguments{
-\item{df}{Data frame con los registros meteorológicos de una o más estaciones.
+\item{df}{Data frame con los registros meteorologicos de una o mas estaciones.
 Debe contener al menos las columnas:
 \itemize{
 \item \code{id}
@@ -15,39 +15,39 @@ Debe contener al menos las columnas:
 \item \code{temperatura_abrigo_150cm}
 }}
 
-\item{colores}{Vector opcional de colores a utilizar en el gráfico.
+\item{colores}{Vector opcional de colores a utilizar en el grafico.
 Si no se especifica, se seleccionan colores aleatorios.}
 
-\item{titulo}{Cadena de texto con el título principal del gráfico.
+\item{titulo}{Cadena de texto con el titulo principal del grafico.
 Por defecto es \code{"Temperatura"}.}
 }
 \value{
-Un objeto de clase \code{ggplot} que muestra la temperatura promedio mensual (°C)
-para cada estación meteorológica.
+Un objeto de clase \code{ggplot} que muestra la temperatura promedio mensual (C)
+para cada estacion meteorologica.
 En el eje X se representan los meses del año y en el eje Y la temperatura
-promedio correspondiente. Cada línea corresponde a una estación distinta.
+promedio correspondiente. Cada linea corresponde a una estacion distinta.
 }
 \description{
-Genera un gráfico de líneas con la evolución mensual de la temperatura promedio
-para una o varias estaciones meteorológicas.
-Permite personalizar la paleta de colores y el título del gráfico.
+Genera un grafico de lineas con la evolucion mensual de la temperatura promedio
+para una o varias estaciones meteorologicas.
+Permite personalizar la paleta de colores y el titulo del grafico.
 }
 \details{
-La función calcula el promedio mensual de la variable \code{temperatura_abrigo_150cm}
-agrupando por estación (\code{id}) y mes (\code{fecha}). Luego construye un gráfico de
-líneas donde cada estación se representa con un color distinto.
-El gráfico es generado mediante \code{ggplot2} y devuelve un objeto de clase \code{ggplot}.
+La funcion calcula el promedio mensual de la variable \code{temperatura_abrigo_150cm}
+agrupando por estacion (\code{id}) y mes (\code{fecha}). Luego construye un grafico de
+lineas donde cada estacion se representa con un color distinto.
+El grafico es generado mediante \code{ggplot2} y devuelve un objeto de clase \code{ggplot}.
 }
 \examples{
 # Cargar dataset de ejemplo y graficar
 data(NH0472)
 grafico_temperatura_mensual(NH0472)
 
-# Cargar otro dataset y personalizar color y título
+# Cargar otro dataset y personalizar color y titulo
 data(NH0046)
 grafico_temperatura_mensual(
   df = NH0046,
   colores = "darkred",
-  titulo = "Evolución mensual de temperatura"
+  titulo = "Evolucion mensual de temperatura"
 )
 }

@@ -3,12 +3,12 @@
 \docType{data}
 \name{metadatos_completos}
 \alias{metadatos_completos}
-\title{Metadatos de estaciones meteorológicas}
+\title{Metadatos de estaciones meteorologicas}
 \format{
 Un data frame con 258 filas y 11 columnas:
 \describe{
-\item{id}{Identificador de la estación (p. ej., "NH0472")}
-\item{nombre}{Nombre de la estación}
+\item{id}{Identificador de la estacion (p. ej., "NH0472")}
+\item{nombre}{Nombre de la estacion}
 \item{localidad}{Lugar donde se encuentra}
 \item{lat}{Latitud (grados decimales)}
 \item{lon}{Longitud (grados decimales)}
@@ -23,7 +23,7 @@ CSV provisto por INTA SIGA: \url{https://raw.githubusercontent.com/rse-r/intro-p
 metadatos_completos
 }
 \description{
-Metadatos de estaciones meteorológicas
+Metadatos de estaciones meteorologicas
 }
 \examples{
 data(metadatos_completos)

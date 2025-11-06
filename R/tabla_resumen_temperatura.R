@@ -1,30 +1,30 @@
 #' TABLA RESUMEN DE TEMPERATURA
 #'
-#' Calcula estadísticas descriptivas de la variable `temperatura_abrigo_150cm`
-#' para una o varias estaciones meteorológicas y devuelve una tabla resumen con los resultados.
+#' Calcula estadisticas descriptivas de la variable `temperatura_abrigo_150cm`
+#' para una o varias estaciones meteorologicas y devuelve una tabla resumen con los resultados.
 #'
-#' @param ... Uno o más data frames con registros meteorológicos que contengan
-#' la columna `temperatura_abrigo_150cm` y el identificador de estación `id`.
+#' @param ... Uno o mas data frames con registros meteorologicos que contengan
+#' la columna `temperatura_abrigo_150cm` y el identificador de estacion `id`.
 #'
 #' @details
-#' La función valida que todos los argumentos recibidos sean data frames y luego
+#' La funcion valida que todos los argumentos recibidos sean data frames y luego
 #' calcula para cada uno un conjunto de medidas descriptivas de (`temperatura_abrigo_150cm`).
-#' Devuelve una tabla combinada con un resumen por estación.
+#' Devuelve una tabla combinada con un resumen por estacion.
 #'
 #' @return
 #' Un objeto de clase `data.frame` con las siguientes columnas:
-#' - `estacion`: identificador único de la estación (`id`).
+#' - `estacion`: identificador unico de la estacion (`id`).
 #' - `media`: temperatura media (°C).
-#' - `minimo`: temperatura mínima registrada (°C).
-#' - `maximo`: temperatura máxima registrada (°C).
-#' - `desviacion`: desviación estándar de la temperatura (°C).
-#' - `n_observaciones`: cantidad de registros válidos considerados en el cálculo.
+#' - `minimo`: temperatura minima registrada (°C).
+#' - `maximo`: temperatura maxima registrada (°C).
+#' - `desviacion`: desviacion estandar de la temperatura (°C).
+#' - `n_observaciones`: cantidad de registros validos considerados en el calculo.
 #'
-#' Cada fila representa el resumen estadístico de una estación meteorológica.
+#' Cada fila representa el resumen estadistico de una estacion meteorologica.
 #'
 #'
 #' @examples
-#' # Calcular resumen de una sola estación
+#' # Calcular resumen de una sola estacion
 #' data(NH0472)
 #' resumen_NH0472 <- tabla_resumen_temperatura(NH0472)
 #'
@@ -37,11 +37,10 @@
 tabla_resumen_temperatura <- function(...) {
   args <- list(...)
 
-  # Verificación: todos deben ser data frames
+  # Verificacion: todos deben ser data frames
   if (!all(vapply(args, is.data.frame, logical(1)))) {
-    cli::cli_abort("Todos los argumentos deben ser data frames. Verifica los objetos pasados a la función.")
+    cli::cli_abort("Todos los argumentos deben ser data frames. Verifica los objetos pasados a la funcion.")
   }
-
 
   resumenes <- data.frame()
 
@@ -63,6 +62,7 @@ tabla_resumen_temperatura <- function(...) {
     resumenes <- rbind(resumenes, resumen)
   }
 
-  cli::cli_inform("Resumen generado correctamente para {nrow(resumenes)} estación(es).")
+  cli::cli_inform("Resumen generado correctamente para {nrow(resumenes)} estacion(es).")
   return(resumenes)
 }
+

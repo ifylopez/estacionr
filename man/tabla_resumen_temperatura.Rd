@@ -7,33 +7,33 @@
 tabla_resumen_temperatura(...)
 }
 \arguments{
-\item{...}{Uno o más data frames con registros meteorológicos que contengan
-la columna \code{temperatura_abrigo_150cm} y el identificador de estación \code{id}.}
+\item{...}{Uno o mas data frames con registros meteorologicos que contengan
+la columna \code{temperatura_abrigo_150cm} y el identificador de estacion \code{id}.}
 }
 \value{
 Un objeto de clase \code{data.frame} con las siguientes columnas:
 \itemize{
-\item \code{estacion}: identificador único de la estación (\code{id}).
+\item \code{estacion}: identificador unico de la estacion (\code{id}).
 \item \code{media}: temperatura media (°C).
-\item \code{minimo}: temperatura mínima registrada (°C).
-\item \code{maximo}: temperatura máxima registrada (°C).
-\item \code{desviacion}: desviación estándar de la temperatura (°C).
-\item \code{n_observaciones}: cantidad de registros válidos considerados en el cálculo.
+\item \code{minimo}: temperatura minima registrada (°C).
+\item \code{maximo}: temperatura maxima registrada (°C).
+\item \code{desviacion}: desviacion estandar de la temperatura (°C).
+\item \code{n_observaciones}: cantidad de registros validos considerados en el calculo.
 }
 
-Cada fila representa el resumen estadístico de una estación meteorológica.
+Cada fila representa el resumen estadistico de una estacion meteorologica.
 }
 \description{
-Calcula estadísticas descriptivas de la variable \code{temperatura_abrigo_150cm}
-para una o varias estaciones meteorológicas y devuelve una tabla resumen con los resultados.
+Calcula estadisticas descriptivas de la variable \code{temperatura_abrigo_150cm}
+para una o varias estaciones meteorologicas y devuelve una tabla resumen con los resultados.
 }
 \details{
-La función valida que todos los argumentos recibidos sean data frames y luego
+La funcion valida que todos los argumentos recibidos sean data frames y luego
 calcula para cada uno un conjunto de medidas descriptivas de (\code{temperatura_abrigo_150cm}).
-Devuelve una tabla combinada con un resumen por estación.
+Devuelve una tabla combinada con un resumen por estacion.
 }
 \examples{
-# Calcular resumen de una sola estación
+# Calcular resumen de una sola estacion
 data(NH0472)
 resumen_NH0472 <- tabla_resumen_temperatura(NH0472)
 

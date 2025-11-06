@@ -3,16 +3,16 @@
 \docType{data}
 \name{NH0910}
 \alias{NH0910}
-\title{Registros meteorológicos — Estación NH0910}
+\title{Registros meteorologicos — Estacion NH0910}
 \format{
 Un data frame con 15.553 filas y 35 columnas:
 \describe{
-\item{fecha}{Fecha de medición (Date)}
+\item{fecha}{Fecha de medicion (Date)}
 \item{temperatura_abrigo_150cm}{Temperatura del aire a 1.5 m (°C)}
-\item{precipitacion_pluviometrica}{Precipitación acumulada (mm)}
-\item{radiacion_global}{Radiación solar global (W/m²)}
-\item{granizo}{Presencia de granizo (1 = sí, 0 = no)}
-\item{nieve}{Presencia de nieve (1 = sí, 0 = no)}
+\item{precipitacion_pluviometrica}{Precipitacion acumulada (mm)}
+\item{radiacion_global}{Radiacion solar global (W/m²)}
+\item{granizo}{Presencia de granizo (1 = si, 0 = no)}
+\item{nieve}{Presencia de nieve (1 = si, 0 = no)}
 \item{...}{Otras columnas presentes en el CSV}
 }
 }
@@ -23,7 +23,7 @@ Un data frame con 15.553 filas y 35 columnas:
 NH0910
 }
 \description{
-Registros meteorológicos — Estación NH0910
+Registros meteorologicos — Estacion NH0910
 }
 \examples{
 data(NH0910)
